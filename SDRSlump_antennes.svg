@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 2050" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#12181f"/>
+    </linearGradient>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a2530"/>
+      <stop offset="100%" stop-color="#0a0e14"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3ee6c4"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="2050" fill="url(#bg)"/>
+
+  <!-- Titre -->
+  <rect x="0" y="0" width="1400" height="90" fill="url(#hdr)" stroke="#3ee6c4" stroke-width="1"/>
+  <text x="700" y="38" text-anchor="middle" fill="#3ee6c4" font-size="26" font-weight="bold" letter-spacing="3">SDRSlump // MATRICE ANTENNES ↔ OUTILS</text>
+  <text x="700" y="64" text-anchor="middle" fill="#6b7d8f" font-size="13">Corpus Vauvillensis — Cartographie RF pour la chaîne KareyPyer/SDRSlump</text>
+
+  <!-- Colonnes headers -->
+  <text x="60" y="120" fill="#8fa3b3" font-size="13" font-weight="bold">BANDE / FRÉQUENCE</text>
+  <text x="330" y="120" fill="#8fa3b3" font-size="13" font-weight="bold">USAGE / OUTIL SDRSlump</text>
+  <text x="700" y="120" fill="#8fa3b3" font-size="13" font-weight="bold">SCHÉMA ANTENNE</text>
+  <text x="1010" y="120" fill="#8fa3b3" font-size="13" font-weight="bold">TYPE / SPECS</text>
+  <line x1="40" y1="132" x2="1360" y2="132" stroke="#2a3744" stroke-width="1"/>
+
+  <!-- ============ ROW 1 : HF/VHF/UHF Large bande (discone) ============ -->
+  <g transform="translate(0,150)">
+    <rect x="40" y="0" width="1320" height="220" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">25 – 1300 MHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">Large bande VHF/UHF</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">gqrx / SDR++ / SDRangel</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">Écoute FM/AM/SSB générique</text>
+    <text x="330" y="70" fill="#e8e8e8" font-size="13">rtl_test / hackrf_info (validation matérielle)</text>
+    <text x="330" y="90" fill="#7d8fa0" font-size="12" font-style="italic">Compatible : RTL-SDR, HackRF, Airspy, LimeSDR</text>
+
+    <!-- Discone drawing -->
+    <g transform="translate(760,20)">
+      <line x1="60" y1="0" x2="60" y2="30" stroke="#3ee6c4" stroke-width="3"/>
+      <line x1="60" y1="30" x2="10" y2="90" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="60" y1="30" x2="35" y2="95" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="60" y1="30" x2="60" y2="98" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="60" y1="30" x2="85" y2="95" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="60" y1="30" x2="110" y2="90" stroke="#3ee6c4" stroke-width="2"/>
+      <path d="M10,90 Q60,110 110,90" fill="none" stroke="#3ee6c4" stroke-width="1.5"/>
+      <line x1="60" y1="30" x2="60" y2="-25" stroke="#e8e8e8" stroke-width="2"/>
+      <circle cx="60" cy="-25" r="3" fill="#e8e8e8"/>
+      <line x1="60" y1="98" x2="60" y2="150" stroke="#7d8fa0" stroke-width="2" stroke-dasharray="3,2"/>
+      <text x="60" y="170" text-anchor="middle" fill="#7d8fa0" font-size="11">mât / trépied</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">Discone omnidirectionnelle</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : 0–2 dBi</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Polarisation : verticale</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11">Hauteur : 40–60 cm</text>
+    <text x="1010" y="112" fill="#7d8fa0" font-size="11">Connecteur : N → SMA/adaptateur</text>
+    <text x="1010" y="132" fill="#7d8fa0" font-size="11">Usage : scan large spectre, découverte</text>
+  </g>
+
+  <!-- ============ ROW 2 : ADS-B 1090 MHz ============ -->
+  <g transform="translate(0,390)">
+    <rect x="40" y="0" width="1320" height="200" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">1090 MHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">ADS-B aviation</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">dump1090</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">Suivi trafic aérien temps réel</text>
+    <text x="330" y="70" fill="#7d8fa0" font-size="12" font-style="italic">RTL-SDR (dongle dédié recommandé)</text>
+
+    <!-- Quarter-wave whip 1090 -->
+    <g transform="translate(790,10)">
+      <line x1="50" y1="90" x2="50" y2="0" stroke="#3ee6c4" stroke-width="3"/>
+      <circle cx="50" cy="0" r="3" fill="#e8e8e8"/>
+      <line x1="20" y1="90" x2="80" y2="90" stroke="#e8e8e8" stroke-width="4"/>
+      <line x1="10" y1="100" x2="90" y2="100" stroke="#7d8fa0" stroke-width="8"/>
+      <text x="50" y="125" text-anchor="middle" fill="#7d8fa0" font-size="11">plan de masse</text>
+      <text x="130" y="45" fill="#7d8fa0" font-size="11">λ/4 ≈ 6.8 cm</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">Fouet accordé (whip λ/4 ou colinéaire)</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : 3–6 dBi (colinéaire)</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Polarisation : verticale</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11">Longueur : ~7 cm (λ/4) à 1 m (colinéaire)</text>
+    <text x="1010" y="112" fill="#7d8fa0" font-size="11">Placement : extérieur, dégagé, hauteur max</text>
+  </g>
+
+  <!-- ============ ROW 3 : 433/868 MHz IoT ============ -->
+  <g transform="translate(0,610)">
+    <rect x="40" y="0" width="1320" height="200" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">433 / 868 MHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">ISM domotique</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">rtl_433</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">Capteurs, stations météo, alarmes,</text>
+    <text x="330" y="70" fill="#e8e8e8" font-size="13">télécommandes (100+ protocoles)</text>
+
+    <!-- Dipole -->
+    <g transform="translate(770,20)">
+      <line x1="0" y1="60" x2="50" y2="60" stroke="#3ee6c4" stroke-width="3"/>
+      <line x1="70" y1="60" x2="120" y2="60" stroke="#3ee6c4" stroke-width="3"/>
+      <rect x="50" y="54" width="20" height="12" fill="#e8e8e8"/>
+      <line x1="60" y1="66" x2="60" y2="100" stroke="#7d8fa0" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="60" y="118" text-anchor="middle" fill="#7d8fa0" font-size="11">coax vers récepteur</text>
+      <text x="10" y="45" fill="#7d8fa0" font-size="11">λ/4</text>
+      <text x="90" y="45" fill="#7d8fa0" font-size="11">λ/4</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">Dipôle demi-onde accordé</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : ~2 dBi</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Longueur totale : 433 MHz ≈ 33 cm</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11"> 868 MHz ≈ 16.5 cm</text>
+    <text x="1010" y="112" fill="#7d8fa0" font-size="11">Simple, imprimable/DIY, faible coût</text>
+  </g>
+
+  <!-- ============ ROW 4 : VHF/UHF pro (POCSAG/DMR/P25/AIS) ============ -->
+  <g transform="translate(0,830)">
+    <rect x="40" y="0" width="1320" height="220" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">137 – 470 MHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">VHF/UHF pro &amp; maritime</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">multimon-ng / dsd-fme</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">POCSAG (pagers), DMR, P25</text>
+    <text x="330" y="70" fill="#e8e8e8" font-size="13">AIS 162 MHz (via gr-osmosdr)</text>
+    <text x="330" y="90" fill="#e8e8e8" font-size="13">Météosat/NOAA 137 MHz (gr-satellites)</text>
+
+    <!-- J-pole -->
+    <g transform="translate(780,10)">
+      <line x1="40" y1="0" x2="40" y2="100" stroke="#3ee6c4" stroke-width="3"/>
+      <line x1="70" y1="30" x2="70" y2="130" stroke="#3ee6c4" stroke-width="3"/>
+      <line x1="40" y1="100" x2="70" y2="100" stroke="#3ee6c4" stroke-width="3"/>
+      <line x1="55" y1="115" x2="70" y2="115" stroke="#e8e8e8" stroke-width="3"/>
+      <line x1="55" y1="115" x2="55" y2="150" stroke="#7d8fa0" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="55" y="168" text-anchor="middle" fill="#7d8fa0" font-size="11">alim. coax (gamma match)</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">J-Pole / Slim Jim (verticale)</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : 3–5 dBi</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Polarisation : verticale</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11">Longueur : ~1 m (bande 2 m/70 cm)</text>
+    <text x="1010" y="112" fill="#7d8fa0" font-size="11">Pas de plan de masse requis</text>
+    <text x="1010" y="132" fill="#7d8fa0" font-size="11">Excellent pour toit / fenêtre haute</text>
+  </g>
+
+  <!-- ============ ROW 5 : GSM 900/1800 ============ -->
+  <g transform="translate(0,1070)">
+    <rect x="40" y="0" width="1320" height="180" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">900 / 1800 MHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">GSM / cellulaire</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">gr-osmosdr + gnuradio-companion</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">Analyse spectrale GSM (recherche/légal)</text>
+    <text x="330" y="70" fill="#7d8fa0" font-size="12" font-style="italic">HackRF / LimeSDR (bande passante suffisante)</text>
+
+    <!-- Yagi -->
+    <g transform="translate(760,15)">
+      <line x1="0" y1="60" x2="130" y2="60" stroke="#7d8fa0" stroke-width="2"/>
+      <line x1="20" y1="40" x2="20" y2="80" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="45" y1="35" x2="45" y2="85" stroke="#3ee6c4" stroke-width="3"/>
+      <line x1="70" y1="42" x2="70" y2="78" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="90" y1="45" x2="90" y2="75" stroke="#3ee6c4" stroke-width="2"/>
+      <line x1="110" y1="47" x2="110" y2="73" stroke="#3ee6c4" stroke-width="2"/>
+      <text x="45" y="105" text-anchor="middle" fill="#7d8fa0" font-size="11">réflecteur → directeurs</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">Yagi directionnelle</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : 8–12 dBi</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Polarisation : verticale ou horizontale</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11">Utile pour DF (goniométrie) / longue portée</text>
+  </g>
+
+  <!-- ============ ROW 6 : L-band / SATCOM (Airspy HF+, PlutoSDR) ============ -->
+  <g transform="translate(0,1270)">
+    <rect x="40" y="0" width="1320" height="220" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">1.5 – 1.7 GHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">L-Band SATCOM / GPS</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">gr-satellites / SoapySDR</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">Inmarsat STD-C, Iridium, GPS L1</text>
+    <text x="330" y="70" fill="#e8e8e8" font-size="13">(cf. exploration signaux satellite Pyer)</text>
+    <text x="330" y="90" fill="#7d8fa0" font-size="12" font-style="italic">Airspy HF+ / PlutoSDR / LimeSDR</text>
+
+    <!-- Patch antenna RHCP -->
+    <g transform="translate(790,10)">
+      <rect x="10" y="10" width="90" height="90" fill="none" stroke="#3ee6c4" stroke-width="2"/>
+      <rect x="30" y="30" width="50" height="50" fill="none" stroke="#3ee6c4" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <circle cx="55" cy="55" r="3" fill="#e8e8e8"/>
+      <path d="M55,55 Q70,40 55,25 Q40,40 55,55" fill="none" stroke="#e8e8e8" stroke-width="1" opacity="0.6"/>
+      <text x="55" y="125" text-anchor="middle" fill="#7d8fa0" font-size="11">patch RHCP + LNA</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">Antenne patch RHCP</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : 5–8 dBic</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Polarisation : circulaire droite</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11">LNA + filtre SAW quasi-indispensables</text>
+    <text x="1010" y="112" fill="#7d8fa0" font-size="11">Bias-tee pour alimentation LNA distant</text>
+    <text x="1010" y="132" fill="#7d8fa0" font-size="11">Vue dégagée du ciel requise</text>
+  </g>
+
+  <!-- ============ ROW 7 : HF (SoapySDR / USRP / audio decode) ============ -->
+  <g transform="translate(0,1510)">
+    <rect x="40" y="0" width="1320" height="200" fill="#0d1319" stroke="#243240" stroke-width="1" rx="4"/>
+    <text x="60" y="30" fill="#3ee6c4" font-size="16" font-weight="bold">1.8 – 30 MHz</text>
+    <text x="60" y="52" fill="#7d8fa0" font-size="12">HF (ondes courtes)</text>
+
+    <text x="330" y="30" fill="#e8e8e8" font-size="13">sox / multimon-ng / SDR++</text>
+    <text x="330" y="50" fill="#e8e8e8" font-size="13">Trafic maritime, radioamateur, numbers stations</text>
+    <text x="330" y="70" fill="#7d8fa0" font-size="12" font-style="italic">Nécessite upconverter si RTL-SDR seul</text>
+
+    <!-- Longwire -->
+    <g transform="translate(760,30)">
+      <path d="M0,60 L200,10" stroke="#3ee6c4" stroke-width="2"/>
+      <circle cx="0" cy="60" r="4" fill="#e8e8e8"/>
+      <circle cx="200" cy="10" r="4" fill="#e8e8e8"/>
+      <line x1="0" y1="60" x2="0" y2="95" stroke="#7d8fa0" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="0" y="112" text-anchor="middle" fill="#7d8fa0" font-size="11">isolateur + coax</text>
+      <text x="200" y="0" text-anchor="middle" fill="#7d8fa0" font-size="11">ancrage éloigné</text>
+    </g>
+
+    <text x="1010" y="30" fill="#e8e8e8" font-size="12" font-weight="bold">Longwire / fil aléatoire</text>
+    <text x="1010" y="52" fill="#7d8fa0" font-size="11">Gain : variable selon longueur</text>
+    <text x="1010" y="72" fill="#7d8fa0" font-size="11">Longueur : 10–30 m idéalement</text>
+    <text x="1010" y="92" fill="#7d8fa0" font-size="11">Boîte d'accord (ATU) recommandée</text>
+    <text x="1010" y="112" fill="#7d8fa0" font-size="11">Terre/contrepoids améliore le rendement</text>
+  </g>
+
+  <!-- Footer note -->
+  <rect x="40" y="1740" width="1320" height="270" fill="#0d1319" stroke="#3ee6c4" stroke-width="1" rx="4" stroke-dasharray="2,3"/>
+  <text x="60" y="1770" fill="#3ee6c4" font-size="14" font-weight="bold">NOTES D'INTÉGRATION — chaîne SDRSlump</text>
+  <text x="60" y="1798" fill="#7d8fa0" font-size="12">• Connecteurs : la plupart des dongles RTL-SDR utilisent SMA femelle — prévoir adaptateur SMA↔N/PL-259 selon l'antenne.</text>
+  <text x="60" y="1820" fill="#7d8fa0" font-size="12">• Bias-tee : HackRF/LimeSDR/PlutoSDR peuvent alimenter un LNA en amont (utile pour 1090 MHz, L-band, VHF faible signal).</text>
+  <text x="60" y="1842" fill="#7d8fa0" font-size="12">• Blacklist DVB (étape 8 du script) : indispensable pour que le noyau libère le dongle RTL2832U avant tout test d'antenne.</text>
+  <text x="60" y="1864" fill="#7d8fa0" font-size="12">• Filtrage : un filtre passe-bande dédié (ex: FM broadcast reject) limite la désensibilisation sur ADS-B/AIS en zone urbaine.</text>
+  <text x="60" y="1886" fill="#7d8fa0" font-size="12">• Pour rtl_433 (433/868) et POCSAG/DMR (137-470), une antenne large bande discone reste un bon compromis multi-usage</text>
+  <text x="60" y="1905" fill="#7d8fa0" font-size="12">  si tu ne veux pas multiplier les mâts — au prix de quelques dB de gain en moins par bande.</text>
+  <text x="60" y="1935" fill="#5a6b7a" font-size="11" font-style="italic">— Corpus Vauvillensis // Cotentin — schéma généré pour KareyPyer/SDRSlump</text>
+
+  <text x="700" y="2030" text-anchor="middle" fill="#3a4a58" font-size="11">SDRSlump · Signal Hacking · github.com/KareyPyer/SDRSlump</text>
+</svg>
